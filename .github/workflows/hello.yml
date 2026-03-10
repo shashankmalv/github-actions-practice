@@ -9,8 +9,21 @@ jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
+
+      - name: code checkout
+        uses: actions/checkout@v4
+      
       - name: say Hello
         run: echo "hello dosto"
+
+      - name: Print current date and time
+        run: date
+
+      - name: print branch name
+        run: echo "branch name is $GITHUB_REF"
+
+      - name: List repository files
+        run: ls -la    
 
       - name: user
         run: echo "Hello $USER"
