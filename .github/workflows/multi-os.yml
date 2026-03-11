@@ -1,0 +1,40 @@
+name: Multi-OS Runner Info
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  ubuntu-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print OS, Hostname, and User
+        run: |
+          echo "OS: $env:RUNNER_OS"
+          echo "Hostname: $(hostname)"
+          echo "Current User: $(whoami)."  
+
+  windows-info:
+    runs-on: windows-latest
+    steps:
+    - name: Print OS, Hostname, and User
+      run: |
+        echo "OS: $env:RUNNER_OS"
+        echo "Hostname: $(hostname)"
+        echo "Current User: $(whoami)."  
+      shell: pwsh
+      
+  mach-os:
+    runs-on: macos-latest
+    steps:
+      - name: Print OS, Hostname< ans User
+      run: |
+       echo "OS: $env.RUNNER_OS"
+       echo "Hostname: $(hostname)"
+       echo "Current User: $(whoami)."
+       
+       
+
+         
+          
+          
