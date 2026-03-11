@@ -1,0 +1,18 @@
+name: Manual Workflow Example
+
+on:
+    workflow_dispatch:
+        inputs:
+            environment:
+                description: "Select env (stag and prod)"
+                required: true
+                default: "staging"
+
+      
+jobs:
+    print-environment:
+        runs-on: ubuntu-latest    
+        
+        steps:
+            - name: Print selected environment
+              run: echo ""The selected environment is ${{ github.event.inputs.environment }}"
