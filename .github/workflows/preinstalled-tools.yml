@@ -1,0 +1,33 @@
+name: Explore Pre-installed Tools
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    
+    check-tools:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: check docker version
+              run: |
+                echo "====Docker======"
+                docker --version
+
+            - name: check python version
+              run: |
+                echo "======Python======"
+                python3 --version
+
+             
+            - name: check node version
+              run: |
+                echo "======Node======"
+                node --version    
+
+            - name: check Git version
+              run: |
+                echo "======Git======"
+                git --version    
