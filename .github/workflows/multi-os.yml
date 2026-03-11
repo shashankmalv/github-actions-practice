@@ -28,10 +28,10 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Print OS, Hostname< ans User
-      run: |
-       echo "OS: $env.RUNNER_OS"
-       echo "Hostname: $(hostname)"
-       echo "Current User: $(whoami)."
+        run: |
+          echo "OS: $env.RUNNER_OS"
+          echo "Hostname: $(hostname)"
+          echo "Current User: $(whoami)."
        
        
 
