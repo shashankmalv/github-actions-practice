@@ -1,16 +1,17 @@
 name: Matrix_test
 
 on:
-    push:
-        branches:
-            - main
+#    push:
+ #       branches:
+  #          - main
+  workflow_dispatch:
 
 jobs:
     matrix-run:
 
         runs-on: ubuntu-latest     
         strategy:
-            fail-fast: false
+            fail-fast: true
             matrix:
                 python-version: ["3.11","3.12","3.12"]
 
