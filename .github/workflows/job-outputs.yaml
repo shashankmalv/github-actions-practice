@@ -14,7 +14,7 @@ jobs:
             - name: Get today's date
               id: date_step
               run: |
-                echo: "today=$(date + '%Y-%m-%d')" >> $GITHUB_OUTPUT
+                echo: "today=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
     print-date:
         runs-on: ubuntu-latest
