@@ -1,0 +1,39 @@
+name: Conditional Practice
+
+on:
+    push:
+    pull_request:
+
+jobs:
+    conditional-job:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Step 1 - Run only on main branch
+              if: github.ref == 'refs/heads/main'
+              run: echo "This step run only in main branch"
+
+
+            - name: Step-2 Intentionally fail
+              run: exit 1
+              
+              
+            - name: Step 3 - Run only on previous step failed
+              if: failure() 
+              run: echo "Previous step failed, so this runs"
+
+            - name: Step 4 - continue even if error happens
+              continue-on-error: true
+              run: |
+                echo "This step will fail but workflow continues"
+                exit 1
+
+    push-only-job:
+      runs-on: ubuntu-latest
+      if: github.event_name == 'push'
+
+      steps:
+        - name: Run only on push
+          run: echo "This job runs on push events"
+
+                
