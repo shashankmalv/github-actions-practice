@@ -18,7 +18,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: test step
-              run: echo"test check"
+              run: echo "test checking"
 
     summary:
         runs-on: ubuntu-latest
