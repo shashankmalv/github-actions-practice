@@ -1,0 +1,32 @@
+name: Python ci pipeline
+
+on:
+    workflow_dispatch:
+
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        
+        steps:
+            - name: code checkoout
+              uses: actions/checkout@v4
+
+            - name: Setup python
+              uses: actions/setup-python@v5
+              with:
+                python-version: "3.11"
+              
+            - name: Install dependencies
+              run: |
+                pip install --upgrade pip
+                pip install -r requirements.txt
+
+            - name: Run lint
+              run: flake8 app.py
+              
+            - name: Run SAST 
+              run: bandid -r app.py
+
+            - name: Run Test
+              run: pytest  
