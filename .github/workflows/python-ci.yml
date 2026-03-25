@@ -26,7 +26,7 @@ jobs:
               run: flake8 app.py
               
             - name: Run SAST 
-              run: bandid -r app.py
+              run: bandit -r app.py
 
             - name: Run Test
               run: pytest  
