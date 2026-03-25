@@ -1,6 +1,8 @@
 name: Job Output Practice
 
-on: push
+on:
+     workflow_dispatch:
+    # push
 
 jobs:
 

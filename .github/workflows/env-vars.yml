@@ -1,6 +1,8 @@
 name: Environment Variables Practice
 
-on: push
+on:
+     workflow_dispatch:
+    # push
 
 # Workflow level variable
 env:

@@ -1,7 +1,7 @@
 name: Multi-OS Runner Info
 
 on:
-  push:
+ #push:
   workflow_dispatch:
 
 jobs:
