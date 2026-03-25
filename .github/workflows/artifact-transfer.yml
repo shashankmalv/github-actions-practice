@@ -22,6 +22,7 @@ jobs:
                 
     job-download:
         runs-on: ubuntu-latest
+        needs: job-upload
         steps:
             - name: Download Artifact
               uses: actions/download-artifact@v4
