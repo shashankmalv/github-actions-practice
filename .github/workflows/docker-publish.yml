@@ -16,7 +16,7 @@ jobs:
               if: github.ref == 'refs/heads/main'
               uses: docker/login-action@v3
               with:
-                username: ${{ vars.DOCKERHUB_USER }}
+                username: ${{ vars.DOCKER_USERNAME }}
                 password: ${{ secrets.DOCKER_TOKEN }}
                 
             - name: Set Short SHA
