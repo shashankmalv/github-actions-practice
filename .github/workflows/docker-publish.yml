@@ -28,4 +28,4 @@ jobs:
                 push: true
                 tags: |
                     ${{ vars.DOCKER_USERNAME }}/github-actions-app:latest
-                    ${{ secrets.DOCKER_USERNAME }}/github-actions-app:sha-${{ env.SHORT_SHA }}
+                    ${{ vars.DOCKER_USERNAME }}/github-actions-app:sha-${{ env.SHORT_SHA }}
