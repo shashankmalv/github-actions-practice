@@ -25,4 +25,4 @@ jobs:
       - name: Run Only When PR is Merged
         if: ${{ github.event.action == 'closed' && github.event.pull_request.merged == true }}
         run: |
-          echo "PR was merged successfully"
+          echo "PR was merged successfully 🎉"
