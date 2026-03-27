@@ -1,9 +1,11 @@
 name: Call Reusable Build Workflow
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    
+  #push:
+   # branches:
+      #- main
 
 jobs:
   build:
