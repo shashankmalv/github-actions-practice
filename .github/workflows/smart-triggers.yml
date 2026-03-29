@@ -1,0 +1,19 @@
+# Trigger only when src/ or app/ changes
+name: Smart Trigger (Code Changes Only)
+
+on:
+  push:
+    branches:
+      - main
+      - 'release/*'
+    paths:
+      - 'src/**'
+      - 'app/**'
+
+jobs:
+  run-on-code-change:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run only when src/app changes
+        run: echo "Code changed in src/ or app/ "

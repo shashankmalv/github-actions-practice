@@ -1,9 +1,9 @@
 name: Scheduled Tasks
 
 on:
-  schedule:
-    - cron: '30 2 * * 1'     # Every Monday 2:30 AM UTC
-    - cron: '0 */6 * * *'    # Every 6 hours
+  #schedule:
+    #- cron: '30 2 * * 1'     # Every Monday 2:30 AM UTC
+    #- cron: '0 */6 * * *'    # Every 6 hours
   workflow_dispatch:          # Manual trigger for testing
 
 jobs:

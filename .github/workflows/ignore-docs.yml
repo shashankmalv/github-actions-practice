@@ -1,0 +1,20 @@
+# Skip when only docs change
+
+name: Ignore Docs Changes
+
+on:
+  push:
+    branches:
+      - main
+      - 'release/*'
+    paths-ignore:
+      - '*.md'
+      - 'docs/**'
+
+jobs:
+  skip-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run only if NOT docs change
+        run: echo "Non-doc changes detected "
