@@ -1,0 +1,21 @@
+name: External Trigger Pipeline
+
+on:
+  repository_dispatch:
+    types: [deploy-request]
+
+jobs:
+  external-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print event type
+        run: echo "Event received- deploy-request"
+
+      - name: Print environment from payload
+        run: |
+          echo "Environment: ${{ github.event.client_payload.environment }}"
+
+      - name: Simulate deployment
+        run: |
+          echo "🚀 Deploying to ${{ github.event.client_payload.environment }}"
